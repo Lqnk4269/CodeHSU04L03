@@ -34,7 +34,7 @@ public class Main {
      * @return String with no vowels
      */
     public static String VowelRemover(String input){
-        return str.replaceAll("[aeiouAEIOU]", "");
+        return input.replaceAll("[aeiouAEIOU]", "");
     }
 
     /**
