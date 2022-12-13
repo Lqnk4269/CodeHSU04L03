@@ -18,8 +18,14 @@ public class Main {
      * @return vowel count int
      */
     public static int VowelCount(String input){
+        int count = 0;
 
-        return -1;
+        for(char c : input.toCharArray()) {
+            if(c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+                count++;
+            }
+        }
+            
     }
 
     /**
@@ -28,8 +34,7 @@ public class Main {
      * @return String with no vowels
      */
     public static String VowelRemover(String input){
-
-        return "";
+        return str.replaceAll("[aeiouAEIOU]", "");
     }
 
     /**
@@ -40,7 +45,7 @@ public class Main {
      */
     public static boolean ContainsSubstring(String input, String target){
 
-        return false;
+        return input.contains(target);
     }
 
     /**
@@ -50,16 +55,32 @@ public class Main {
      */
     public static String ReverseString(String input){
 
-        return "";
+        return new StringBuilder(input).reverse().toString();
     }
 
     /**
      * Determines if a given string is palindrome
+     * @param i int
+     * @param j int
      * @param input String
      * @return true if given string is a palindrome, false otherwise
+     *
+     * i and j point to first and last character
+     *
      */
-    public static boolean PalindromeChecker(String input){
+    public static boolean PalindromeChecker(int i, int j, String input){
+        
 
-        return false;
+        {
+        if (i >= j) {
+            return true;
+        }
+
+        if (A.charAt(i) != A.charAt(j)) {
+            return false;
+        }
+ 
+        return isPalindrome(i + 1, j - 1, A);
+    }
     }
 }
